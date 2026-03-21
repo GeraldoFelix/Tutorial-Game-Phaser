@@ -1,6 +1,6 @@
 # 🚀 Tutorial-Game-Phaser
 
-Este projeto é o resultado do meu primeiro contato prático com o **Phaser**, um dos frameworks mais poderosos para criação de jogos 2D na web. Segui o guia oficial "Making your first Phaser 3 game" para entender as mecânicas fundamentais de um jogo.
+Este projeto é o resultado do meu primeiro contato prático com o **Phaser**, um framework para criação de jogos 2D na web. Segui o guia oficial "Making your first Phaser 3 game" para entender as mecânicas fundamentais do framework
 
 ---
 
