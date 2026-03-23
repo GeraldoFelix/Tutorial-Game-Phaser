@@ -25,6 +25,10 @@
                 debug: false
             }
         },
+        scale: {
+        mode: Phaser.Scale.FIT, // Ajusta o jogo para caber na tela mantendo a proporção
+        autoCenter: Phaser.Scale.CENTER_BOTH // centralizando
+    },
         scene: {
             preload: preload,
             create: create,
@@ -49,6 +53,9 @@
     var platforms;
     var score = 0;
     var scoreText;
+
+    var keys;
+
 
     function create (){
         this.add.image(400, 300, 'sky')  // as imagens são colocadas no centro do game, logo teria que ser 400 e 300 pois o tamanho da janela é esta //
@@ -89,6 +96,11 @@
 
         // cursor teclado
         cursors = this.input.keyboard.createCursorKeys();
+
+        // Teclas WASD
+        keys = this.input.keyboard.addKeys('W,A,S,D');
+
+
         // stars 
         stars = this.physics.add.group({
             key: 'star',
@@ -155,14 +167,14 @@
 
 
     function update (){
-        if (cursors.left.isDown)
+        if (keys.A.isDown)
         {
             player.setVelocityX(-160);
 
             player.anims.play('left', true);
         }
 
-        else if (cursors.right.isDown)
+        else if (keys.D.isDown)
         {
             player.setVelocityX(160);
 
@@ -176,7 +188,7 @@
             player.anims.play('turn');
         }
 
-        if (cursors.up.isDown && player.body.touching.down)
+        if (keys.W.isDown && player.body.touching.down)
         {
             player.setVelocityY(-330);
         }
